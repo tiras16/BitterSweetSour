@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang='en'>
+  <meta charset="utf-8">
+  <base href="/profile">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	<!-- Page Title -->
+	<title>BSS | Profile</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../static/fav.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/animate-3.7.0.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome-4.7.0.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap-4.1.3.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/owl-carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+
+	<script src="../static/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="../static/assets/js/vendor/bootstrap-4.1.3.min.js"></script>
+	<script src="../static/assets/js/vendor/wow.min.js"></script>
+	<script src="../static/assets/js/vendor/owl-carousel.min.js"></script>
+	<script src="../static/assets/js/vendor/jquery.datetimepicker.full.min.js"></script>
+	<script src="../static/assets/js/vendor/jquery.nice-select.min.js"></script>
+	<head>
+		<style>
+		@import "bourbon";
+		@import "neat";
+
+		$text-color:#747373;
+		$header-height:60px;
+		html, body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.body {
+			position: fixed;
+			top: -20px;
+			left: -20px;
+			right: -40px;
+			bottom: -40px;
+			width: auto;
+			height: auto;
+			background-image: url(./static/assets/images/ox.jpg);
+			background-size: auto;
+			background-position: 251px 20px;
+			-webkit-filter: blur(5px);
+			z-index: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		header {
+		position: fixed;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		top: 0;
+		background:rgba(#d8af83,.8);
+		height: $header-height;
+		padding: 12px 0;
+		z-index: 999;
+		}
+
+		.site-title h1 {
+		margin: 5px 0 0;
+		padding: 0;
+		font-size: 24px;
+		color: #071b0e;
+		}
+
+
+
+		menu {
+		width: 260px;
+		position: fixed;
+		padding:0;
+		z-index: 10;
+		height: calc(100% - 100px);
+		overflow:hidden;
+		background:rgba(#D6D6D4, .2);
+		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+		top: $header-height;
+		left: 50px;
+		margin: 0;
+		ul {
+			@include span-columns(12);
+			clear: both;
+			float: unset;
+		}
+		> div { 
+			padding:10px;
+		}
+		}
+
+		#filter_text {
+		width: 100%;
+		margin: 0;
+		}
+
+		menu .admin-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li { 
+			&:first-child{ 
+			border-top:1px solid darken(rgba(#d8af83,.6), 5%);
+			}
+		}
+		li a {
+			clear: both;
+			display: block;
+			padding: 10px;
+			margin: 0;
+			color: #fff;
+			font-size: 12px;
+			letter-spacing: 1px;
+			background: lighten(rgba(#d9b187,.4), .5%);
+			border-bottom: 1px solid darken(rgba(#d9b187,.6), 5%);
+			span {
+			padding: 0 10px 0 0;
+			}
+			&:hover,
+			&:active {
+			@include transition(all 0.2s ease-in-out);
+			text-decoration: none;
+			background: darken(#8be5b1,15%);
+			}
+		}
+		}
+
+		menu .user-profile {
+		padding: 10px;
+		text-align: center;
+		margin-bottom: 5px;
+		float: left;
+		}
+
+		menu .profile-pic {
+		@include span-columns(3);
+		img {
+			width: 100%;
+			height: 65px;
+			margin: 0 auto;
+			border-radius:70%;
+			border: 2px solid #d8af83;
+		}
+		}
+
+		menu .user-info {
+		@include span-columns(9);
+		}
+
+		menu .profile-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		
+		li {
+			padding: 0;
+			margin: 0; 
+			@include span-columns(3);
+			@include omega(4n);
+		}
+		a {
+			padding: 10px;
+			color:#8be5b1;
+		}
+		a:hover,
+		a:active {
+			color:#d8af83;
+		}
+		}
+
+		menu .username {
+		font-size: 20px;
+		text-align: left;
+		color:#ffffff;
+		letter-spacing: 1px;
+		padding-left: 20px;
+		}
+
+		menu .filter-form {
+		padding: 10px;
+		}
+
+
+		main {
+		position: relative;
+		width: calc(100% - (260px + 50px));
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		padding: 20px;
+		margin-left: (260px + 50px);
+		margin-top: $header-height;
+		float: left;
+		padding-bottom: $header-height;
+		}
+
+
+		section {
+		@include span-columns(12);
+
+		padding: 20px;
+		margin: 10% 0;
+		
+		}
+
+		//cards
+		.card-content {
+			/*background: #ffffff;*/
+			border: 4px;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+		}
+
+		.card-img {
+			position: relative;
+			overflow: hidden;
+			border-radius: 0;
+			z-index: 1;
+			width: 200px;
+			height: 200px;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.card-img img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.card-img span {
+			position: absolute;
+			top: 15%;
+			left: 12%;
+			background: #2ecc71;
+			padding-left:20px;
+			padding:6px;
+			color: #fff;
+			font-size: 15px;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-ms-border-radius: 4px;
+			-o-border-radius: 4px;
+			transform: translate(-50%,-50%);
+		}
+		.card-img span h4{
+				font-size: 13px;
+				margin:0;
+				padding:10px 5px;
+				line-height: 0;
+		}
+		.card-desc {
+			margin-top: 20px;
+			height: calc(100% - 200px);
+		}
+
+		.card-desc h3 {
+			color: #000000;
+			font-weight: 600;
+			font-size: 1.5em;
+			line-height: 1.3em;
+			margin-top: 0;
+			margin-bottom: 5px;
+			padding: 0;
+		}
+
+		.card-desc p {
+			color: #747373;
+			font-size: 14px;
+			font-weight: 400;
+			font-size: 1em;
+			line-height: 1.5;
+			margin: 0px;
+			margin-bottom: 20px;
+			padding: 0;
+			width:100%;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.btn-info{
+			display: inline-block;
+			background-color: #2ecc71;
+			padding: .84rem 2.14rem;
+		}
+
+		.btn-card{
+			background-color: #2ecc71;
+			color: #fff;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+			padding: .84rem 2.14rem;
+			font-size: .81rem;
+			-webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+			-o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+			margin: 0;
+			border: 0;
+			-webkit-border-radius: .125rem;
+			border-radius: .125rem;
+			cursor: pointer;
+			text-transform: uppercase;
+			white-space: normal;
+			word-wrap: break-word;
+			color: #fff;
+		}
+		.btn-card:hover {
+			background: #1abc9c;
+		}
+		a.btn-card {
+			text-decoration: none;
+			color: #fff;
+		}
+		.admin-info
+		{
+			font-size: 14px;
+    		font-family: sans-serif;
+			width: 100%;
+			margin-bottom: -0.5rem !important;
+		}
+		.dynamicMenu{
+			background-color: #305779;
+		}
+		.logo{
+				z-index: 10000;
+				width: 190px;
+				height: 150px ;
+				position: absolute;
+				left: 17%;
+				top: -0.5%;
+			}
+			.header-area {
+			
+			width: 80%;
+			background: #d3d8ff73;
+			background-image: initial;
+			background-position-x: initial;
+			background-position-y: initial;
+			background-size: initial;
+			background-repeat-x: initial;
+			background-repeat-y: initial;
+			background-attachment: initial;
+			background-origin: initial;
+			background-clip: initial;
+			background-color: rgba(211, 216, 255, 0.45);
+		}
+		.row {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px;
+			}
+			.main-menu ul li a {
+				color: #ffffff !important;
+				font-family: "Roboto",sans-serif;
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 600;
+				display: inline-block;
+				padding: 15px;
+			}
+			.main-menu ul li ul.sub-menu {
+				padding: 10px;
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			    margin-top: 37px;
+				left: 11px;
+				width: 130px;
+				background: #d3d8ff73;
+				background-image: initial;
+				background-position-x: initial;
+				background-position-y: initial;
+				background-size: initial;
+				background-repeat-x: initial;
+				background-repeat-y: initial;
+				background-attachment: initial;
+				background-origin: initial;
+				background-clip: initial;
+				background-color: rgba(211, 216, 255, 0.45);
+				z-index: 2;
+				-webkit-transition: .5s;
+				-moz-transition: .5s;
+				-o-transition: .5s;
+				transition: .5s;
+			}
+			.btn{
+				width: 200px;
+				height: 35px;
+				border: none;
+				background-color: inherit;
+				font-size: 16px;
+				cursor: pointer;
+				display: inline-block;
+				padding: 6px;
+				
+			}
+			.success {
+				color: #ffffff;
+			}
+			
+			.success:hover {
+				background-color: rgb(233, 236, 253);
+				color:#305779;
+			}
+			p {
+				width: 250px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="body"  ></div>
+		<img src="./static/myLogom.png" class="logo" alt="bitter sweet sour" />
+		<header class="header-area" style="background-color: #bec3ff !important;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12">
+							<div class="custom-navbar">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>  
+							<div class="main-menu">
+								<ul>
+									<li class="active"><a href="/">home</a></li>
+									<li><a >recipes</a>
+										<ul class="sub-menu" style="background-color: #bec3ff   !important;">
+										<li><a href="/food-menu">food</a></li>
+										<li><a href="/drink-menu">drink</a></li>
+										<li><a href="/dessert-menu">dessert</a></li>
+									</ul>
+									</li>
+									<li class="active"><a href="/contact">contact</a></li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		<header class="fixed-header" role="banner">
+			<div class="container-fluid">
+		  
+			  <!-- Site Navigation -->
+			  <div class="top-components col-xs-3 pull-right">
+			  </div>
+			</div>
+		  </header>
+		  
+		  <menu id="user" class="dynamicMenu">
+		  
+			<div class="user-profile">
+			  <div class="user-info">
+				<div class="username">
+					<p>
+						{% if datam %}
+						<form method="get">	
+							<strong><label>{{ datam[0][5] }}</label></strong> 
+
+							<ul>
+								<label class="admin-info">{{ datam[0][1] }} {{ datam[0][2] }}</label>
+								<label class="admin-info">{{ datam[0][3] }} </label>
+								<label class="admin-info">{{ datam[0][4] }} </label>
+							</ul>
+						</form>
+						{% endif %}
+					</p>
+				
+					<form method="get" action="profile">	
+						<button class="btn success" style = "margin-top: 190px;"> My Recipes</button>	
+					</form>
+					<form method="get" action="add-recipe">	
+						<button class="btn success" style = "margin-top: 10px;"> Add New Recipe</button>	
+					</form>
+					<form method="get" action="change-info">	
+						<button class="btn success" style = "margin-top: 10px;"> Change Personal Info </button>	
+					</form>
+					<form method="get" action="logout">	
+						<button class="btn success" style = "margin-top: 10px;"> Log Out</button>	
+					</form>
+					<form method="post" >	
+						<button class="btn success" name="deleteButton" value="delete" style = "margin-top: 10px;"> Delete My Account</button>	
+				</form>
+					
+				</div>
+				<ul class="profile-menu">
+				  <li><a href="/directory"><span class="glyphicon glyphicon-list-alt" title="Directory Phonebook"></span></a></li>
+				  <li><a href="/help?topic=index"><span class="glyphicon glyphicon-question-sign" title="Help"></span></a></li>
+				  <li><a href="#"><span class="glyphicon glyphicon-cog" title="Settings"></span></a></li>
+				  <li><a href="/login"><span class="glyphicon glyphicon-log-out" title="Log Out / End Session"></span></a></li>
+				</ul>
+			  </div>
+			</div>
+		  
+
+		  </menu>
+		  
+
+			<main style="float: right;">
+  				<section>
+
+			<div class="row">
+			{%for i in range(0, contactlen)%} 
+				<div style="padding-left: 20px;width: 34%;padding: auto;padding-right: 20px;margin-right: 24px;background-color: #eeee;padding-bottom: 20px;box-shadow: 5px 0px 5px 5px #f8f8f8; margin-bottom:20px;">
+					<div class="card-content">
+						<div class="card-desc">
+						<div class="row">
+							<div class="col-md-3 col-xs-3 col-sm-3"><h3>{{contact[i][3]}}</h3></div>
+							<div class="col-md-9 col-xs-9 col-sm-9"><p style="text-align: right;margin-top: 15px;font-weight: bold;">{{contact[i][2]}}</p></div>
+						</div>
+						<div class="row">
+								<div class="col-md-5 col-xs-5 col-sm-5"><p> <span style="font-weight:bold" >Category : </span>{{contact[i][4]}}</p></div>
+								<div class="col-md-7 col-xs-7 col-sm-7"><p style="text-align: right;"> <span style="font-weight:bold" >E-mail : </span> {{contact[i][5]}}</p></div>
+						</div>
+						
+						<p>{{contact[i][1]}}</p>
+						</div>
+							<form method="post">
+								<input type="hidden" name="contactid" value="{{contact[i][0]}}" >
+								<div class="col-md-1 col-xs-1 col-sm-1" style="float:right;"><button style="background:none; border:none;" ><i class="fa fa-trash-o" style="color:red; font-size:20px" aria-hidden="true"></i></button></div>
+							</form>
+							{%if contact[i][6] != true %}
+							<form method="post" >
+								<input type="hidden" name="contactid" value="{{contact[i][0]}}" >
+								<div class="col-md-1 col-xs-1 col-sm-1" style="float:right;"><button name="status" value="put" style="background:none; border:none;" ><i class="fa fa-check-circle-o" style="color:red; font-size:20px" aria-hidden="true"></i></button></div>
+							{%else%}
+								<input type="hidden" name="contactid" value="{{contact[i][0]}}" >
+								<div class="col-md-1 col-xs-1 col-sm-1" style="float:right;"><i class="fa fa-check-circle-o" style="color:green; font-size:20px" aria-hidden="true"></i></div>	
+							</form>
+							{%endif%}
+					</div>
+				</div>
+			{%endfor%}
+			{%if result%}	
+				<p style="
+					margin: auto;
+					font-size: 20px;
+					font-weight: bold;
+					/* margin-top: 11%; */
+					color: #bec3ff;
+				">{{result}}</p>
+			{%endif%}
+			</div>
+
+  			</section>
+		</main>
+
+	</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang='en'>
+  <meta charset="utf-8">
+  <base href="/sign-up">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	<!-- Page Title -->
+	<title>BSS | Sign Up</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./static/fav.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/animate-3.7.0.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome-4.7.0.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap-4.1.3.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/owl-carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+
+	<script src="../static/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="../static/assets/js/vendor/bootstrap-4.1.3.min.js"></script>
+	<script src="../static/assets/js/vendor/wow.min.js"></script>
+	<script src="../static/assets/js/vendor/owl-carousel.min.js"></script>
+	<script src="../static/assets/js/vendor/jquery.datetimepicker.full.min.js"></script>
+	<script src="../static/assets/js/vendor/jquery.nice-select.min.js"></script>
+	<head>
+		<style>
+		@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+		@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+		body{
+		margin: 0;
+		padding: 0;
+		background: #fff;
+		overflow:hidden;
+		color: #fff;
+		font-family: Arial;
+		font-size: 12px;
+		width:100%;
+		background-image: url('./static/component-css/back.jpg');
+		overflow:none;
+		height:100vh;
+		}
+
+		.body{
+		position: fixed;
+		top: -20px;
+		left: -20px;
+		right: -40px;
+		bottom: -40px;
+		width: auto;
+		height: auto;
+		background-image: url('./static/component-css/back.jpg');
+		background-size: contain;
+		-webkit-filter: blur(5px);
+		z-index: 0;
+		background-position: center;
+		
+		}
+
+		.header{
+		position: absolute;
+		top: calc(50% - 35px);
+		left: calc(42% - 255px);
+		z-index: 2;
+		}
+
+		.header div{
+		float: left;
+		color: #fff;
+		font-family: 'Exo', sans-serif;
+		font-size: 35px;
+		font-weight: 200;
+		}
+
+		.header div span{
+		color: #5379fa !important;
+		}
+
+		.login{
+		position: absolute;
+		top: calc(50% - 200px);
+		left: calc(50% - 50px);
+		height: 100vh;
+		width: 350px;
+		padding: 10px;
+		z-index: 2;
+
+		}
+
+		.login input[type=text]{
+		width: 250px;
+		height: 30px;
+		background: transparent;
+		border: 1px solid rgba(255,255,255,0.6);
+		border-radius: 2px;
+		color: #fff;
+		font-family: 'Exo', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 4px;
+		margin-top: 10px;
+		}
+		.login input[type=email]{
+		width: 250px;
+		height: 30px;
+		background: transparent;
+		border: 1px solid rgba(255,255,255,0.6);
+		border-radius: 2px;
+		color: #fff;
+		font-family: 'Exo', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 4px;
+		margin-top: 10px;
+		}
+
+
+		.login input[type=password]{
+		width: 250px;
+		height: 30px;
+		background: transparent;
+		border: 1px solid rgba(255,255,255,0.6);
+		border-radius: 2px;
+		color: #fff;
+		font-family: 'Exo', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 4px;
+		margin-top: 10px;
+		}
+
+		.login-button{
+		width: 250px;
+		height: 35px;
+		background: #b32400;
+		border: 1px solid #b32400;
+		cursor: pointer;
+		border-radius: 4px;
+		color: #eee3d1;
+		font-family: 'Exo', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 6px;
+		margin-top: 10px;
+		}
+
+		.login input[type=button]:hover{
+		opacity: 0.8;
+		}
+
+		.login input[type=button]:active{
+		opacity: 0.6;
+		}
+
+		.login input[type=text]:focus{
+		outline: none;
+		border: 1px solid rgba(255,255,255,0.9);
+		}
+
+		.login input[type=password]:focus{
+		outline: none;
+		border: 1px solid rgba(255,255,255,0.9);
+		}
+
+		.login input[type=button]:focus{
+		outline: none;
+		}
+
+		label {
+		display: block;
+		font-family: 'Exo', sans-serif;
+		color: #e5e5e5;
+		font-size: 14px;
+		margin-top: 5px;
+		margin-bottom: 2px;
+		}
+
+		.dropdown {
+		position: relative;
+		display: inline-block;
+		font-family: 'Exo', sans-serif;
+		font-size: 12px;
+		border: 1px solid #c4c0bf;
+		border-radius: 2px;
+		width: 80px;
+		text-align: center;
+		left: -34px;
+		top: -2px;
+		padding: 6px;
+		background-color: #544a47;
+		color:#e5e5e5;
+
+		}
+
+		.dropdown > a, .dropdown > span {
+		font-family: 'Exo', sans-serif;
+		font-size: 13px;
+		margin-top: 4px;
+		display: inline-block;
+		color: #eee3d1;
+		text-decoration: none;
+		cursor:pointer;
+		}
+
+		.dropdown > a:before, .dropdown > span:before {
+		position: absolute;
+		right: 25px;
+		top: 25px;
+		content: ' ';
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 5px solid #e5e5e5;
+		}
+
+		.dropdown input[type=checkbox] {
+		position: absolute;
+		display: block;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		opacity: 0;
+		}
+
+		.dropdown input[type=checkbox]:checked {
+		position: fixed;
+		z-index:+0;
+		top: 0px; left: 0px; 
+		right: 0px; bottom: 0px;
+		}
+
+		.dropdown ul {
+		text-align: left;
+		position: absolute;
+		top: 36px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		left: 0px;
+		list-style: none;
+		padding: 4px 0px;
+		display: none;
+		background-color: white;
+		box-shadow: 0 3px 6px rgba(0,0,0,.175);
+		width: 60px;
+		}
+
+		.dropdown input[type=checkbox]:checked + ul {
+		display: block;
+		}
+
+		.dropdown ul li {
+		display: block;
+		padding: 0px 10px;
+		white-space: nowrap;
+		min-width: 60px;
+		font-size: 12px;
+		color: #464444;
+		font-weight: 700;
+
+		}
+
+		.dropdown ul li:hover {
+		background-color: #bdbdbd;
+		cursor: pointer;
+		left:0;
+		}
+
+		.dropdown ul li a {
+		text-decoration: none;
+		display: block;
+		color:#bdbdbd;
+		width:60px;
+		}
+		.dropdown .divider {
+		height: 1px;
+		margin: 9px 0;
+		overflow: hidden;
+		background-color: #e5e5e5;
+		font-size: 1px;
+		padding: 0;
+		}
+		.dropdown:hover { 
+		background-position: right center; 
+		}
+
+		[type="date"] {
+		background:#fff url(login.jpg)  97% 50% no-repeat ;
+		}
+		[type="date"]::-webkit-inner-spin-button {
+		display: none;
+		}
+		[type="date"]::-webkit-calendar-picker-indicator {
+		opacity: 0;
+		}
+
+		#dateofbirth{
+		display: inline-block;
+		color: #e5e5e5;
+		margin-top: 5px;
+		font-size: 15px;
+
+		}
+		#datepicker{
+		display: inline-block;
+		color: #e5e5e5;
+		margin-top: 5px;
+		font-size: 15px;
+		background-color: #c5583d00;
+		border: 1px solid #e5e5e5;
+		}
+
+		#gender{
+		display: inline-block;
+		color: #e5e5e5;
+		margin-top: 5px;
+		font-size: 15px;
+		margin-left: 25%;
+
+		}
+		.back {
+		background-color:transparent;
+		display:inline-block;
+		cursor:pointer;
+		color:#eee3d1;
+		font-family: 'Exo', sans-serif;
+		font-size:14px;
+		padding:0px 0px;
+		border: none;
+		margin-top:15px;
+		}
+		.back:hover {
+		background-color:transparent;
+		}
+		.back:active {
+		position:relative;
+		top:1px;
+		}
+		input {
+		border: 1px solid #c5583d;
+		border-radius: 4px;
+		background-color: #c5583d00;
+		padding: 3px 5px;
+		box-shadow: inset 0 3px 6px rgba(57, 92, 28, 0.1);
+		width: 160px;
+		margin-right: 44px;
+		}
+
+
+
+		::-webkit-input-placeholder{
+		color: rgba(255,255,255,0.6);
+		}
+
+		::-moz-input-placeholder{
+		color: rgba(255,255,255,0.6);
+		}
+		.logo{
+				z-index: 10000;
+				width: 190px;
+				height: 150px ;
+				position: absolute;
+				left: 17%;
+				top: -0.5%;
+			}
+			.header-area {
+			
+			width: 80%;
+			background: #d3d8ff73;
+			background-image: initial;
+			background-position-x: initial;
+			background-position-y: initial;
+			background-size: initial;
+			background-repeat-x: initial;
+			background-repeat-y: initial;
+			background-attachment: initial;
+			background-origin: initial;
+			background-clip: initial;
+			background-color: rgba(211, 216, 255, 0.45);
+		}
+		.row {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px;
+			}
+			.main-menu ul li a {
+				color: #ffffff !important;
+				font-family: "Roboto",sans-serif;
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 600;
+				display: inline-block;
+				padding: 15px;
+			}
+			.main-menu ul li ul.sub-menu {
+				padding: 10px;
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			    margin-top: 37px;
+				left: 11px;
+				width: 130px;
+				background: #d3d8ff73;
+				background-image: initial;
+				background-position-x: initial;
+				background-position-y: initial;
+				background-size: initial;
+				background-repeat-x: initial;
+				background-repeat-y: initial;
+				background-attachment: initial;
+				background-origin: initial;
+				background-clip: initial;
+				background-color: rgba(211, 216, 255, 0.45);
+				z-index: 2;
+				-webkit-transition: .5s;
+				-moz-transition: .5s;
+				-o-transition: .5s;
+				transition: .5s;
+			}
+
+		</style>
+	</head>
+	<body>
+		<img src="./static/myLogom.png" class="logo" alt="bitter sweet sour" />
+		<header class="header-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-sm-12">
+							<div class="custom-navbar">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>  
+							<div class="main-menu">
+								<ul>
+									<li class="active"><a href="/">home</a></li>
+									<li><a >recipes</a>
+										<ul class="sub-menu">
+										<li><a href="/food-menu">food</a></li>
+										<li><a href="/drink-menu">drink</a></li>
+										<li><a href="/dessert-menu">dessert</a></li>
+									</ul>
+									</li>
+									<li><a href="/sign-up">sign up</a></li>
+									<li><a href="/sign-in">sign in</a></li>
+									<li class="active"><a href="/contact">contact</a></li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		<div class="body">
+		</div>
+		<div class="header">
+			<div>BitterSweetSour</div>
+		</div>
+		<br>
+		<div class="login">
+			<form method="post">
+				<input type="text" placeholder="first name" name="FirstName" required autofocus>
+				<input type="text" placeholder="last name" name="LastName" required autofocus>
+				<input type="email" placeholder="e-mail" name="Email" required autofocus>
+
+				<input type="text" placeholder="username" name="Username" required autofocus>
+				<input type="password" placeholder="password" name="Password" required>
+				<div> 
+				<div><span id="dateofbirth">Date Of Birth</span><span id="gender">Gender</span></div>
+					<input type="date" id="datepicker" name="Birthdate">
+					
+					<select class="dropdown" name="Gender">
+						<option value=""hidden>choose</option>
+						<option value="Female">Female</option>
+						<option value="Male">Male</option>
+						<option value="Others">Others</option>
+					</select>
+				</div>
+
+				<input type="text" placeholder="location" name="Location" required autofocus>
+				<input type="text" placeholder="recovery question" name="RecoveryQuestion" required autofocus>
+				<input type="text" placeholder="recovery answer" name="RecoveryAnswer" required autofocus>
+				<button class="login-button" >Sign Up </button>
+			</form>
+			<form method="get" action="sign-in">	
+				<button class="back" >Go back</button>
+			</form>
+		</div>
+	</body>
+</html>
+
+
+
+
+

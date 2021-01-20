@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang='en'>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	<!-- Page Title -->
+	<title>BSS | Home Page</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./static/fav.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" type="text/css" href="./static/assets/css/animate-3.7.0.css">
+	<link rel="stylesheet" type="text/css" href="./static/assets/css/font-awesome-4.7.0.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/assets/css/bootstrap-4.1.3.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/assets/css/owl-carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/assets/css/jquery.datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/assets/css/style.css">
+
+	<script src="./static/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="./static/assets/js/vendor/bootstrap-4.1.3.min.js"></script>
+	<script src="./static/assets/js/vendor/wow.min.js"></script>
+	<script src="./static/assets/js/vendor/owl-carousel.min.js"></script>
+	<script src="./static/assets/js/vendor/jquery.datetimepicker.full.min.js"></script>
+	<script src="./static/assets/js/vendor/jquery.nice-select.min.js"></script>
+	<head>
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+			@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+			body{
+			margin: 0;
+			padding: 0;
+			background: #fff;
+
+			color: rgb(171, 197, 100);
+			font-family: Arial;
+			font-size: 12px;
+			}
+			.blog_categorie_area{
+			padding-top: 80px;
+			padding-bottom: 80px;
+			background: #ece3e3 !important;
+			}
+			
+
+			.body{
+			position: fixed;
+			top: -20px;
+			left: -20px;
+			right: -40px;
+			bottom: -40px;
+			width: auto;
+			height: auto;
+			background-image: url('./static/component-css/back.jpg');
+			background-size: contain;
+			-webkit-filter: blur(5px);
+			z-index: 0;
+			background-position: center;
+			}
+
+			.grad{
+			position: absolute;
+			top: -20px;
+			left: -20px;
+			right: -40px;
+			bottom: -40px;
+			width: auto;
+			height: auto;
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+			z-index: 1;
+			opacity: 0.7;
+			}
+			.customer-text2{
+			margin-left: 90px;
+			}
+			.header{
+			position: absolute;
+			top: calc(50% - 35px);
+			left: calc(42% - 255px);
+			z-index: 2;
+			}
+
+			.header div{
+			float: left;
+			color: #fff;
+			font-family: 'Exo', sans-serif;
+			font-size: 35px;
+			font-weight: 200;
+			}
+
+
+			::-webkit-input-placeholder{
+			color: rgba(255,255,255,0.6);
+			}
+
+			::-moz-input-placeholder{
+			color: rgba(255,255,255,0.6);
+			}
+
+			.testimonial-area .testimonial-slider.owl-carousel .single-slide {
+			background: #fff;
+			background-repeat: no-repeat;
+			background-position: top right;
+			padding: 30px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			-ms-border-radius: 3px;
+			-o-border-radius: 3px;
+			border-radius: 3px;
+			height: 150px !important;
+			}
+			h6 {
+			color: #fff;
+			font-size: 16px !important;
+			font-family: "Roboto",sans-serif;
+			font-weight: 300;
+			text-transform: uppercase;
+			margin-top: -150px;
+			}
+			.section-padding4 {
+			padding: 100px 0 200px;
+			}
+			
+			.customer-text2 {
+    		margin-right: -4px !important;
+			}
+
+			.logo{
+				z-index: 10000;
+				width: 190px;
+				height: 150px ;
+				position: absolute;
+				left: 17%;
+				top: -0.5%;
+			}
+			.header-area {
+			
+			width: 80%;
+			background: #d3d8ff73;
+			background-image: initial;
+			background-position-x: initial;
+			background-position-y: initial;
+			background-size: initial;
+			background-repeat-x: initial;
+			background-repeat-y: initial;
+			background-attachment: initial;
+			background-origin: initial;
+			background-clip: initial;
+			background-color: rgba(211, 216, 255, 0.45);
+		}
+		.row {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: 25px;
+			}
+			.main-menu ul li a {
+				color: #ffffff !important;
+				font-family: "Roboto",sans-serif;
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 600;
+				display: inline-block;
+				padding: 15px;
+			}
+			.main-menu ul li ul.sub-menu {
+				padding: 10px;
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			    margin-top: 37px;
+				left: 11px;
+				width: 130px;
+				background: #d3d8ff73;
+				background-image: initial;
+				background-position-x: initial;
+				background-position-y: initial;
+				background-size: initial;
+				background-repeat-x: initial;
+				background-repeat-y: initial;
+				background-attachment: initial;
+				background-origin: initial;
+				background-clip: initial;
+				background-color: rgba(211, 216, 255, 0.45);
+				z-index: 2;
+				-webkit-transition: .5s;
+				-moz-transition: .5s;
+				-o-transition: .5s;
+				transition: .5s;
+			}
+			p {
+				width: 250px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+		</style>
+	</head>
+	<body>
+		<img src="./static/myLogom.png" class="logo" alt="bitter sweet sour" />
+			<header class="header-area">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-xs-12 col-sm-12">
+								<div class="custom-navbar">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>  
+								<div class="main-menu">
+									<ul>
+										<li class="active"><a href="#">home</a></li>
+										<li><a >recipes</a>
+										  <ul class="sub-menu">
+											<li><a href="/food-menu">food</a></li>
+											<li><a href="/drink-menu">drink</a></li>
+											<li><a href="/dessert-menu">dessert</a></li>
+										</ul>
+										</li>
+										<li class="active"><a href="/contact">contact</a></li>
+									
+										{% if username %}
+										<a href="/profile" style= "color: #ffb606; font-size: medium;">{{username}}</a>
+										{% else %}
+										<li><a href="/sign-up">sign up</a></li>
+										<li><a href="/sign-in">sign in</a></li>
+										{% endif %}
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+			<section class="banner-area text-center" >
+					<div class="container">
+						<div class="row" style="margin-bottom: 90px;">
+							<div class="col-lg-12">
+								<h6>the most interesting food in the world</h6>
+								<h1>Discover the <span class="prime-color">flavors</span><br>  
+								<span class="style-change">of <span class="prime-color">BitterSweetSour</span></span></h1>
+							</div>
+						</div>
+					</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+										<div class="categories_post">
+											<img src="./static/assets/images/cat-post-1.jpg" alt="post">
+											<div class="categories_details">
+												<div class="categories_text">
+													<a href="/food-menu"><h5>FOODS</h5></a>
+													<div class="border_line"></div>
+													<p>Most delicious foods of the world</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+										<div class="categories_post">
+											<img src="./static/assets/images/pinkbox_desig.jpg" alt="post">
+											<div class="categories_details">
+												<div class="categories_text">
+													<a href="/dessert-menu"><h5>DESSERTS</h5></a>
+													<div class="border_line"></div>
+													<p>Most delicious desserts of the world</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-6">
+										<div class="categories_post">
+											<img src="./static/assets/images/juice.jpg" alt="post">
+											<div class="categories_details">
+												<div class="categories_text">
+													<a href="/drink-menu"><h5>DRINKS</h5></a>
+													<div class="border_line"></div>
+													<p>Most delicious drinks of the world</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+				</section>
+				<!-- Banner Area End -->
+				<!--================Blog Categorie Area =================-->
+				
+				<!--================Blog Categorie Area =================-->
+				<!-- Testimonial Area Starts -->
+				<section class="testimonial-area section-padding4">
+						<div class="container" style="max-width: 1600px;">
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="section-top2 text-center">
+											<h3>Last <span>recipes</span></h3>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									
+									<div class="col-lg-12">
+										<div class="testimonial-slider owl-carousel" style="
+												display: contents;
+												transform: translate3d(-1140px, 0px, 0px);
+												transition: all 1s ease 0s;
+												width: 3990px;">
+											<div style="width: 31%; float:left; margin-right: 15px;">
+												{% if food %}
+												<div class="single-slide d-sm-flex" style ="margin-bottom: 30px; width: 100%; border-radius: 20px;">
+													<div class="customer-img mr-4 mb-4 mb-sm-0">
+														<img src="./static/assets/images/{{food[3]}}" alt="" >
+													</div>
+													<div class="customer-text" >
+														<a  href="/recipe/food/{{food[0]}}"><h5 style="font-size: 20px !important; margin-bottom: -2%;">{{food[1]}}</h5></a>
+														<p class="p" style="font-size: 16px; margin-top: 15%; color: rgb(0, 0, 0); font-family:Arial; ">{{food[2]}}</p>
+													</div>
+													<div class="customer-text2" >
+														<span style= "margin-left: -150px; text-align: left; font-size: 13px; color: #ffb606;">{{food[4]}}</span>
+													</div>
+												</div>
+												{% endif %}	
+											</div>
+											<div style="width: 31%; float:left; margin-right: 15px;">
+												{% if dessert %}
+												<div class="single-slide d-sm-flex" style ="margin-bottom: 30px; width: 100%; border-radius: 20px;">
+													<div class="customer-img mr-4 mb-4 mb-sm-0">
+														<img src="./static/assets/images/{{dessert[3]}}" alt="">
+													</div>
+													<div class="customer-text" >
+														<a  href="/recipe/dessert/{{dessert[0]}}"><h5 style="font-size: 20px !important; margin-bottom: -2%;">{{dessert[1]}}</h5></a>
+														<p class="p" style="font-size: 16px; margin-top: 15%; color: rgb(0, 0, 0); font-family: Arial;">{{dessert[2]}}</p>
+													</div>
+													<div class="customer-text2" >
+														<span style= "margin-left: -150px; text-align: left; font-size: 13px; color: #ffb606;">{{dessert[4]}}</span>
+													</div>
+												</div>
+												{% endif %}	
+											</div>
+											<div style="width: 31%; float:left; margin-right: 15px;">
+												{% if beverage %}
+												<div class="single-slide d-sm-flex" style ="margin-bottom: 30px; width: 100%; border-radius: 20px;">
+													<div class="customer-img mr-4 mb-4 mb-sm-0">
+														<img src="./static/assets/images/{{beverage[3]}}" alt="">
+													</div>
+													<div class="customer-text" >
+														<a  href="/recipe/drink/{{beverage[0]}}"><h5 style="font-size: 20px !important; margin-bottom: -2%;">{{beverage[1]}}</h5></a>
+														<p class="p" style="font-size: 16px; margin-top: 15%; color: rgb(0, 0, 0); font-family: Arial;">{{beverage[2]}}</p>
+													</div>
+													<div class="customer-text2" >
+														<span style= "margin-left: -150px; text-align: left; font-size: 13px; color: #ffb606;">{{beverage[4]}}</span>
+													</div>
+												</div>
+												{% endif %}	
+											</div>
+		
+			
+												
+												
+											</div>
+										</div>
+									</div>
+									
+							</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="section-top2 text-center">
+									<h3>Member <span>says</span></h3>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-lg-12">
+								<div class="testimonial-slider owl-carousel" style="
+										display: contents;
+										transform: translate3d(-1140px, 0px, 0px);
+										transition: all 1s ease 0s;
+										width: 3990px;">
+									<div style="width: 48%; float:left;">
+										{% if len %}
+										{%for i in range(0, len)%} 
+										<div class="single-slide d-sm-flex" style ="margin-bottom: 30px; width: 100%; border-radius: 20px; ">
+											<div class="customer-img mr-4 mb-4 mb-sm-0">
+												<img src="./static/assets/images/{{comment1[i][7]}}" alt="">
+											</div>
+											<div class="customer-text"  >
+												<a  href="/recipe/food/{{comment1[i][5]}}"><h5>{{comment1[i][6]}}</h5></a>
+												<h5 style="font-size: 16px !important;font-style: italic; margin-bottom: -2%;">{{comment1[i][1]}}</h5>
+												<p class="pt-3" style="font-size: 16px; color: rgb(0, 0, 0); font-family: Arial;">{{comment1[i][2]}}</p>
+											</div>
+											<div class="customer-text2" >
+												<h5 style="margin-left: -75px !important;">{{comment1[i][8]}}</h5>
+												<span style="margin-left: -75px !important; color: #ffb606;">{{comment1[i][3]}}</span>
+											</div>
+										</div>
+										{%endfor%}
+										{% endif %}
+									</div>
+									<div style="width: 48%; float:right;">
+																			
+										{% if comment2 %}
+										<div class="single-slide d-sm-flex" style ="margin-bottom: 30px; width: 100%; border-radius: 20px;">
+											<div class="customer-img mr-4 mb-4 mb-sm-0">
+												<img src="./static/assets/images/{{comment2[7]}}" alt="">
+											</div>
+											<div class="customer-text"  >
+												<a  href="/recipe/dessert/{{comment2[5]}}"><h5>{{comment2[6]}}</h5></a>
+												<h5 style="font-size: 16px !important;font-style: italic; margin-bottom: -2%;">{{comment2[1]}}</h5>
+												<p class="pt-3" style="font-size: 16px; color: rgb(0, 0, 0); font-family:Arial;">{{comment2[2]}}</p>
+											</div>
+											<div class="customer-text2" >
+												<h5 style="margin-left: -75px !important;">{{comment2[8]}}</h5>
+												<span style="margin-left: -75px !important; color: #ffb606;">{{comment2[3]}}</span>
+											</div>
+										</div>
+										{% endif %}
+										
+										{% if comment3 %}
+										<div class="single-slide d-sm-flex" style ="margin-bottom: 30px; width: 100%; border-radius: 20px;">
+											<div class="customer-img mr-4 mb-4 mb-sm-0">
+												<img src="./static/assets/images/{{comment3[7]}}" alt="">
+											</div>
+											<div class="customer-text"  >
+												<a  href="/recipe/drink/{{comment3[5]}}"><h5>{{comment3[6]}}</h5></a>
+												<h5 style="font-size: 16px !important;font-style: italic; margin-bottom: -2%;">{{comment3[1]}}</h5>
+												<p class="pt-3" style="font-size: 16px; color: rgb(0, 0, 0); font-family:Arial;">{{comment3[2]}}</p>
+											</div>
+											<div class="customer-text2" >
+												<h5 style="margin-left: -75px !important;">{{comment3[8]}}</h5>
+												<span style="margin-left: -75px !important; color: #ffb606;">{{comment3[3]}}</span>
+											</div>
+										</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+							
+					</div>
+				</section>
+				
+	</body>
+</html>
+   
+
+
+	
+
+

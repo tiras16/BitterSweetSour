@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang='en'>
+  <meta charset="utf-8">
+  <base href="/change-info">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	<!-- Page Title -->
+	<title>BSS | Change Personal Info</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../static/fav.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/animate-3.7.0.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome-4.7.0.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap-4.1.3.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/owl-carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+
+	<script src="../static/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="../static/assets/js/vendor/bootstrap-4.1.3.min.js"></script>
+	<script src="../static/assets/js/vendor/wow.min.js"></script>
+	<script src="../static/assets/js/vendor/owl-carousel.min.js"></script>
+	<script src="../static/assets/js/vendor/jquery.datetimepicker.full.min.js"></script>
+	<script src="../static/assets/js/vendor/jquery.nice-select.min.js"></script>
+	<head>
+		<style>
+		@import "bourbon";
+		@import "neat";
+
+		$text-color:#747373;
+		$header-height:60px;
+		html, body {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.body {
+			position: fixed;
+			top: -20px;
+			left: -20px;
+			right: -40px;
+			bottom: -40px;
+			width: auto;
+			height: auto;
+			background-image: url(./static/assets/images/ox.jpg);
+			background-size: auto;
+			background-position: 251px 20px;
+			-webkit-filter: blur(5px);
+			z-index: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		header {
+		position: fixed;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		top: 0;
+		background:rgba(#d8af83,.8);
+		height: $header-height;
+		padding: 12px 0;
+		z-index: 999;
+		}
+
+		.site-title h1 {
+		margin: 5px 0 0;
+		padding: 0;
+		font-size: 24px;
+		color: #071b0e;
+		}
+
+
+
+		menu {
+		width: 260px;
+		position: fixed;
+		padding:0;
+		z-index: 10;
+		height: calc(100% - 100px);
+		background:rgba(#D6D6D4, .2);
+		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+		overflow: hidden;
+		top: $header-height;
+		left: 50px;
+		margin: 0;
+		ul {
+			@include span-columns(12);
+			clear: both;
+			float: unset;
+		}
+		> div { 
+			padding:10px;
+		}
+		}
+
+		#filter_text {
+		width: 100%;
+		margin: 0;
+		}
+
+		menu .admin-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li { 
+			&:first-child{ 
+			border-top:1px solid darken(rgba(#d8af83,.6), 5%);
+			}
+		}
+		li a {
+			clear: both;
+			display: block;
+			padding: 10px;
+			margin: 0;
+			color: #fff;
+			font-size: 12px;
+			letter-spacing: 1px;
+			background: lighten(rgba(#d9b187,.4), .5%);
+			border-bottom: 1px solid darken(rgba(#d9b187,.6), 5%);
+			span {
+			padding: 0 10px 0 0;
+			}
+			&:hover,
+			&:active {
+			@include transition(all 0.2s ease-in-out);
+			text-decoration: none;
+			background: darken(#8be5b1,15%);
+			}
+		}
+		}
+
+		menu .user-profile {
+		padding: 10px;
+		text-align: center;
+		margin-bottom: 5px;
+		float: left;
+		}
+
+		menu .profile-pic {
+		@include span-columns(3);
+		img {
+			width: 100%;
+			height: 65px;
+			margin: 0 auto;
+			border-radius:70%;
+			border: 2px solid #d8af83;
+		}
+		}
+
+		menu .user-info {
+		@include span-columns(9);
+		}
+
+		menu .profile-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		
+		li {
+			padding: 0;
+			margin: 0; 
+			@include span-columns(3);
+			@include omega(4n);
+		}
+		a {
+			padding: 10px;
+			color:#8be5b1;
+		}
+		a:hover,
+		a:active {
+			color:#d8af83;
+		}
+		}
+
+		menu .username {
+		font-size: 20px;
+		text-align: left;
+		color:#ffffff;
+		letter-spacing: 1px;
+		padding-left: 20px;
+		}
+
+		menu .filter-form {
+		padding: 10px;
+		}
+
+
+		main {
+		position: relative;
+		width: calc(100% - (260px + 50px));
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		padding: 20px;
+		margin-left: (260px + 50px);
+		margin-top: $header-height;
+		float: left;
+		padding-bottom: $header-height;
+        margin-left: 10%;
+		}
+
+
+		section {
+		@include span-columns(12);
+        padding: 20px;
+		margin: 10% 0;
+		
+		}
+
+		//cards
+		.card-content {
+			/*background: #ffffff;*/
+			border: 4px;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+		}
+
+		.card-img {
+			position: relative;
+			overflow: hidden;
+			border-radius: 0;
+			z-index: 1;
+			width: 200px;
+			height: 200px;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.card-img img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.card-img span {
+			position: absolute;
+			top: 15%;
+			left: 12%;
+			background: #2ecc71;
+			padding-left:20px;
+			padding:6px;
+			color: #fff;
+			font-size: 15px;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-ms-border-radius: 4px;
+			-o-border-radius: 4px;
+			transform: translate(-50%,-50%);
+		}
+		.card-img span h4{
+				font-size: 13px;
+				margin:0;
+				padding:10px 5px;
+				line-height: 0;
+		}
+		.card-desc {
+			margin-top: 20px;
+			height: calc(100% - 200px);
+		}
+
+		.card-desc h3 {
+			color: #000000;
+			font-weight: 600;
+			font-size: 1.5em;
+			line-height: 1.3em;
+			margin-top: 0;
+			margin-bottom: 5px;
+			padding: 0;
+		}
+
+		.card-desc p {
+			color: #747373;
+			font-size: 14px;
+			font-weight: 400;
+			font-size: 1em;
+			line-height: 1.5;
+			margin: 0px;
+			margin-bottom: 20px;
+			padding: 0;
+			width:100%;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.btn-info{
+			display: inline-block;
+			background-color: #2ecc71;
+			padding: .84rem 2.14rem;
+		}
+
+		.btn-card{
+			background-color: #2ecc71;
+			color: #fff;
+			box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+			padding: .84rem 2.14rem;
+			font-size: .81rem;
+			-webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+			-o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+			transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+			margin: 0;
+			border: 0;
+			-webkit-border-radius: .125rem;
+			border-radius: .125rem;
+			cursor: pointer;
+			text-transform: uppercase;
+			white-space: normal;
+			word-wrap: break-word;
+			color: #fff;
+		}
+		.btn-card:hover {
+			background: #1abc9c;
+		}
+		a.btn-card {
+			text-decoration: none;
+			color: #fff;
+		}
+		.admin-info
+		{
+			font-size: 14px;
+    		font-family: sans-serif;
+			width: 100%;
+			margin-bottom: -0.5rem !important;
+		}
+		.dynamicMenu{
+			background-color: #305779;
+		}
+		.logo{
+				z-index: 10000;
+				width: 190px;
+				height: 150px ;
+				position: absolute;
+				left: 17%;
+				top: -0.5%;
+			}
+			.header-area {
+			
+			width: 80%;
+			background: #d3d8ff73;
+			background-image: initial;
+			background-position-x: initial;
+			background-position-y: initial;
+			background-size: initial;
+			background-repeat-x: initial;
+			background-repeat-y: initial;
+			background-attachment: initial;
+			background-origin: initial;
+			background-clip: initial;
+			background-color: rgba(211, 216, 255, 0.45);
+		}
+		.row {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px;
+			}
+			.main-menu ul li a {
+				color: #ffffff !important;
+				font-family: "Roboto",sans-serif;
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 600;
+				display: inline-block;
+				padding: 15px;
+			}
+			.main-menu ul li ul.sub-menu {
+				padding: 10px;
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+			    margin-top: 37px;
+				left: 11px;
+				width: 130px;
+				background: #d3d8ff73;
+				background-image: initial;
+				background-position-x: initial;
+				background-position-y: initial;
+				background-size: initial;
+				background-repeat-x: initial;
+				background-repeat-y: initial;
+				background-attachment: initial;
+				background-origin: initial;
+				background-clip: initial;
+				background-color: rgba(211, 216, 255, 0.45);
+				z-index: 2;
+				-webkit-transition: .5s;
+				-moz-transition: .5s;
+				-o-transition: .5s;
+				transition: .5s;
+			}
+			.btn{
+				width: 200px;
+				height: 35px;
+				border: none;
+				background-color: inherit;
+				font-size: 16px;
+				cursor: pointer;
+				display: inline-block;
+				padding: 6px;
+				
+			}
+			.success {
+				color: #ffffff;
+			}
+			
+			.success:hover {
+				background-color: rgb(233, 236, 253);
+				color:#305779;
+			}
+			p {
+				width: 250px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+            .disabled-checkbox input+label {
+                position: absolute;
+                left: 7px !important;
+                top: 10px !important;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+                cursor: pointer;
+                border: 1px solid #cecec7 !important;
+                margin-left:10px;
+            }
+
+            .primary-switch {
+                width: 38px;
+                height: 17px;
+                left: 24px;
+                top: -12px;
+                border-radius: 8.5px;
+                background: #fff;
+                position: relative;
+                cursor: pointer;
+            }
+            .primary-switch input+label {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 93% !important;
+                height: 100%;
+            }
+            .primary-switch input+label:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: #f9f9ff !important;
+                border-radius: 8.5px;
+                cursor: pointer;
+                -webkit-transition: all 0.2s;
+                -moz-transition: all 0.2s;
+                -o-transition: all 0.2s;
+                transition: all 0.2s;
+            }
+            .primary-switch input:checked+label:before {
+                background: #e77991 !important;
+            }
+
+            /*file upload*/
+            .single-input-primary {
+                display: block;
+                width: 100%;
+                line-height: 30px;
+                border: 1px solid transparent;
+                outline: none;
+                background: #f9f9ff;
+                padding: 10px 10px;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #797979;
+                text-align: left;
+            }
+
+            /*button*/
+            .genric-btn {
+                float: right !important;
+                display: inline-block;
+                outline: none;
+				background-color: #305779 !important;
+                line-height: 40px;
+                padding: 0px 0px;
+                font-size: .8em;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 500;
+                cursor: pointer;
+                -webkit-transition: all 0.3s ease 0s;
+                -moz-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                transition: all 0.3s ease 0s;
+            }
+
+            .input-group-icon-ingre{
+                margin-top:25px;
+                border-top: 1px solid #f9f9ff; 
+                border-bottom:1px solid #f9f9ff;
+                padding-top:10px;
+                padding-bottom:10px;
+                width:120%;
+                height:63px;
+            }
+            .mt-mb-20 {
+                margin-top:20px !important;
+                margin-bottom:20px!important;
+            }
+            .mt-30 {
+                margin-top: 30px;
+            }
+            .mt-5 {
+                margin-top:5px !important;
+            }
+            .timepicker{
+                width: 130px;
+                display: inline-block;
+                color: #777;
+                /* margin-top: 5px; */
+                font-size: 15px;
+                background-color: #f9f9ff;
+                border: 1px solid #e5e5e5;
+                border-radius: 4px;
+            }
+            .datepicker{
+                font-size: 18px;
+                color: #777;
+                width: 160px;
+                padding: 2px;
+                display: inline-block;
+                font-size: 15px;
+                background-color: #f9f9ff;
+                border: 1px solid #e5e5e5;
+                border-radius: 4px;
+            }
+            .wrap{
+                flex-wrap: nowrap !important;
+            }
+			
+			[type="date"] {
+			background:#fff url(login.jpg)  97% 50% no-repeat ;
+			}
+			[type="date"]::-webkit-inner-spin-button {
+			display: none;
+			}
+			[type="date"]::-webkit-calendar-picker-indicator {
+			opacity: 0;
+			}
+
+			#dateofbirth{
+			display: inline-block;
+			color: #000000;
+			margin-top: 5px;
+			font-size: 15px;
+
+			}
+			#datepicker{
+			display: inline-block;
+			color: #000000;
+			margin-top: 5px;
+			font-size: 15px;
+			background-color: #c5583d00;
+			border: 1px solid #e5e5e5;
+			}
+
+			#gender{
+			display: inline-block;
+			color: #e5e5e5;
+			margin-top: 5px;
+			font-size: 15px;
+			margin-left: 25%;
+
+			}
+			.disabled-checkbox input+label {
+                position: absolute;
+                left: 7px !important;
+                top: 10px !important;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 3px;
+                cursor: pointer;
+                border: 1px solid #cecec7 !important;
+                margin-left:10px;
+            }
+
+            .primary-switch {
+                width: 38px;
+                height: 17px;
+                left: 24px;
+                top: -12px;
+                border-radius: 8.5px;
+                background: #fff;
+                position: relative;
+                cursor: pointer;
+            }
+            .primary-switch input+label {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 93% !important;
+                height: 100%;
+            }
+            .primary-switch input+label:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: #f9f9ff !important;
+                border-radius: 8.5px;
+                cursor: pointer;
+                -webkit-transition: all 0.2s;
+                -moz-transition: all 0.2s;
+                -o-transition: all 0.2s;
+                transition: all 0.2s;
+            }
+            .primary-switch input:checked+label:before {
+                background: #e77991 !important;
+            }
+
+            /*file upload*/
+            .single-input-primary {
+                display: block;
+                width: 100%;
+                line-height: 30px;
+                border: 1px solid transparent;
+                outline: none;
+                background: #f9f9ff;
+                padding: 10px 10px;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #797979;
+                text-align: left;
+            }
+
+            /*button*/
+            .genric-btn {
+                float: right !important;
+                display: inline-block;
+                outline: none;
+                line-height: 40px;
+                padding: 0px 0px;
+				background-color: #f49b0e !important;
+                font-size: .8em;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 500;
+                cursor: pointer;
+                -webkit-transition: all 0.3s ease 0s;
+                -moz-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                transition: all 0.3s ease 0s;
+            }
+
+			.genric-btn.danger:hover {
+                color: white;
+                border: 1px solid #5176de;
+                background: #5176de !important;
+            }
+            .input-group-icon-ingre{
+                margin-top:25px;
+                border-top: 1px solid #f9f9ff; 
+                border-bottom:1px solid #f9f9ff;
+                padding-top:10px;
+                padding-bottom:10px;
+                width:120%;
+                height:63px;
+            }
+            .mt-mb-20 {
+                margin-top:20px !important;
+                margin-bottom:20px!important;
+            }
+            .mt-30 {
+                margin-top: 30px;
+            }
+            .mt-5 {
+                margin-top:5px !important;
+            }
+           
+		
+		</style>
+	</head>
+	<body>  
+		<div class="body"  ></div>
+        <img src="./static/myLogom.png" class="logo" alt="bitter sweet sour" />
+        <header class="header-area" style="background-color: #bec3ff !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="custom-navbar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>  
+                        <div class="main-menu">
+                            <ul>
+                                <li class="active"><a href="/">home</a></li>
+                                <li><a >recipes</a>
+                                    <ul class="sub-menu">
+                                    <li><a href="/food-menu">food</a></li>
+                                    <li><a href="/drink-menu">drink</a></li>
+                                    <li><a href="/dessert-menu">dessert</a></li>
+                                </ul>
+                                </li>
+                                <li class="active"><a href="/contact">contact</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <header class="fixed-header" role="banner">
+            <div class="container-fluid">
+                <!-- Site Navigation -->
+                <div class="top-components col-xs-3 pull-right">
+                </div>
+            </div>
+        </header>
+
+        <menu id="user" class="dynamicMenu">
+            <div class="user-profile">
+                <div class="user-info">
+                    <div class="username">
+                        <p>
+                            {% if datam %}
+                            <form method="get">	
+                                <strong><label>{{ datam[0][5] }}</label></strong> 
+
+                                <ul>
+                                    <label class="admin-info">{{ datam[0][1] }} {{ datam[0][2] }}</label>
+                                    <label class="admin-info">{{ datam[0][3] }} </label>
+                                    <label class="admin-info">{{ datam[0][4] }} </label>
+                                </ul>
+                            </form>
+                            {% endif %}
+                        </p>
+                       
+						<form method="get" action="profile">	
+							<button class="btn success" style = "margin-top: 190px;"> My Recipes</button>	
+						</form>
+						{% if authority == 'admin' %}
+						<form method="get" action="all-contacts">	
+								<button class="btn success" style = "margin-top: 10px;">Contacts</button>	
+							</form>
+						{%endif%}
+						<form method="get" action="add-recipe">	
+							<button class="btn success" style = "margin-top: 10px;"> Add New Recipe</button>	
+						</form>
+						<form method="get" action="logout">	
+							<button class="btn success" style = "margin-top: 10px;"> Log Out</button>	
+						</form>
+						<form method="post" >	
+							<button class="btn success" name="deleteButton" value="delete" style = "margin-top: 10px;"> Delete My Account</button>	
+					</form>
+                    </div>
+                </div>
+            </div>
+        </menu>
+        <main style="padding-left: 350px;">
+            <section>
+                <div class="whole-wrap">
+                    <div class="container">
+                        <div >
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8">
+                                    <h3 class="mb-30 title_color">Change Personal Info</h3> 
+										<div class="row mt-10">							
+											<div class="mb-3 col-md-7 col-xs-7 col-sm-7" style="margin-left: 47px;">
+												<div class="row" style="padding-top:5px;">
+													<form method="post" style="width: 300px;">
+														{% if info %}
+														<div class="input-group-icon mt-10">
+															<input type="text" name="FirstName" value = "{{ info[0][1] }}"  placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input">
+														</div>
+														<div class="input-group-icon mt-10">
+															<input type="text" name="LastName" value = "{{ info[0][2] }}" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
+														</div>
+														<div class="input-group-icon mt-10">
+															<select name="Gender" value = "{{ info[0][3] }}" class="form-control">
+																<option value="{{ info[0][3] }}" selected>{{ info[0][3] }}</option>
+																<option value="Female">Female</option>
+																<option value="Male">Male</option>
+																<option value="Others">Others</option>
+															</select><br>
+														</div>
+														<div  class="input-group-icon" style="margin-top: -15px;">
+															<input type="date" id="datepicker" name="Birthdate" value = "{{ info[0][4] }}" class="form-control">
+														</div>
+														<div  class="input-group-icon mt-10">
+															<input type="text" name="Location" value = "{{ info[0][5] }}" placeholder="Location" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Location'" required class="single-input">
+														</div>
+														{% endif %}
+
+														{% if datam %}
+														<div  class="input-group-icon mt-10">
+															<input type="email" name="email" value = "{{ datam[0][4] }}" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required class="single-input">
+														</div>
+														<div  class="input-group-icon mt-10">
+															<input type="password" name="password" value = "{{ datam[0][6] }}"  placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input">
+														</div>
+														{% endif %}
+															<button id="mybutton" class="col-md-5 col-xs-5 col-sm-5 genric-btn danger radius" style="margin-top: 30px;padding-right:0px; left:-34%; "> Save </button> 
+														
+													</form>
+												</div>
+											</div>
+										</div>
+
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>                  
+            </section>
+		</main>
+		<script>
+				if(info)
+					var today = info[0][4]
+					document.getElementById("Birthdate").value = today;
+					console.log(today)
+		</script>
+    </body>
+</html>
+
+
